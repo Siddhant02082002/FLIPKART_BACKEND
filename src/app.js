@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import apiFetch from "./route/apiFetch.js";
 import status from "./route/check-api.js";
 import connectDB from "./db/index.js";
+import dataFetch from "./route/dataFetch.js"
 const app = express();
 
 app.use(
@@ -20,6 +21,7 @@ app.use(cookieParser());
 // Simple route handlers
 app.use("/api/healthcheck", apiFetch);
 app.use("/api/status", status);
+app.use("/api/dataFetch", dataFetch);
 
 const PORT = process.env.PORT || 3000;
 connectDB()

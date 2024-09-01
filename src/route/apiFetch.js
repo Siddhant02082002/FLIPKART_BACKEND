@@ -348,22 +348,23 @@ router.post("/", async (req, res) => {
                 "Workflow completed successfully and artifacts downloaded.",
             });*/
 
-            await refines();
+            const pika = await refines();
+            console.log(pika);
+            const datas = JSON.parse(
+              fs.readFileSync(
+                path.join(__dirname, "..", "utils", "Summary.json"),
+                "utf8"
+              )
+            );
+            datas.map(async (data) => {
+              await ScanResult.deleteMany({ fileName: data.fileName });
+              const tmp = await ScanResult.create(data);
+              
+              await tmp.save();
+            });
           } else {
             res.json({ message: "Workflow did not complete successfully." });
           }
-
-          const datas = JSON.parse(
-            fs.readFileSync(
-              path.join(__dirname, "..", "utils", "Summary.json"),
-              "utf8"
-            )
-          );
-          datas.map(async (data) => {
-            await ScanResult.deleteMany({ fileName: data.fileName });
-            const tmp = await ScanResult.create(data);
-            await tmp.save();
-          });
         }
       } catch (error) {
         console.error(
