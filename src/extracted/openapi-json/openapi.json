@@ -1,0 +1,40 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "admin",
+    "description": "Collection generated programmatically from Node.js server",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://backend-testing2-0.onrender.com"
+    }
+  ],
+  "tags": [
+    {
+      "name": "authRoute"
+    }
+  ],
+  "paths": {
+    "/me": {
+      "get": {
+        "tags": [
+          "authRoute"
+        ],
+        "summary": "GET authRoute",
+        "description": "GET authRoute clonedRepo/src/routes/v1/authRoute.js",
+        "requestBody": {
+          "content": {}
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

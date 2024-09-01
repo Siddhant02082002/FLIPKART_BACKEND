@@ -1,0 +1,25 @@
+{
+  "info": {
+    "name": "admin",
+    "description": "Collection generated programmatically from Node.js server",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "authRoute",
+      "item": [
+        {
+          "name": "GET authRoute",
+          "request": {
+            "url": "https://backend-testing2-0.onrender.com/me",
+            "method": "get",
+            "header": [],
+            "body": {},
+            "description": "GET authRoute clonedRepo/src/routes/v1/authRoute.js"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
