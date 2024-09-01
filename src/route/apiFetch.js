@@ -34,7 +34,7 @@ async function triggerWorkflow(inputUrl, branch) {
             {
                 ref: branch, // Specify the branch to run the workflow on
                 inputs: {
-                    url: inputUrl
+                    repo_url: inputUrl
                 }
             },
             {
